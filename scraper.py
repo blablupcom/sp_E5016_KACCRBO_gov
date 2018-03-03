@@ -103,6 +103,8 @@ for link in links:
     if '.pdf' not in csvfile:
         url = link['href']
         csvfiles = link.find_next('a').text.strip().replace('.xlsx', '')
+        if 'RBKC' in csvfiles:
+            continue
         csvYr = csvfiles.split(' ')[-1]
         if '20' not in csvYr:
             csvYr = '2014'
